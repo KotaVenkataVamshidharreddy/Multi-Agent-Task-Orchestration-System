@@ -13,6 +13,34 @@ A real-time pipeline where four specialised AI agents — **Planner → Research
 **Stack:** Python 3.9 · FastAPI · React 18 · Vite · Server-Sent Events
 
 ---
+---
+
+## Screenshots
+
+### 1. Landing Page
+
+![Landing Page](./screenshots/01-landing-page.png)
+
+---
+
+### 2. AI Pipeline Visualizer
+
+![Pipeline Visualizer](./screenshots/02-pipeline-visualizer.gif)
+
+---
+
+### 3. Agent Activity Log (Expanded View)
+
+![Agent Activity](./screenshots/03-agent-activity-details.png)
+
+---
+
+### 4. Final Report Output
+
+![Final Report](./screenshots/04-final-report-view.png)
+
+---
+
 
 ## How It Works
 
