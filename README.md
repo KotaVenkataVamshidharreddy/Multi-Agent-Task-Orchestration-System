@@ -1,6 +1,14 @@
-# Multi-Agent Task Orchestration System
+# Real-Time Multi-Agent Research Orchestration System
 
 A real-time pipeline where four specialised AI agents — **Planner → Researcher → Writer → Reviewer** — collaborate to turn any natural-language research request into a polished report, with every step streamed live to the browser.
+## What This Assignment Demonstrates
+
+- Multi-agent orchestration
+- Async task lifecycle management
+- Real-time frontend streaming (SSE)
+- Clean separation of concerns
+- Extensible agent architecture
+---
 
 **Stack:** Python 3.9 · FastAPI · React 18 · Vite · Server-Sent Events
 
@@ -116,17 +124,31 @@ Visit **http://localhost:5173** in your browser.
 | `GET` | `/tasks/{task_id}/stream` | **SSE stream** — emits full Task JSON every 500 ms until `DONE` or `FAILED`. |
 | `GET` | `/tasks` | List all in-memory tasks (debug). |
 
-### Quick test
+## Quick Test
+
+### macOS / Linux / Git Bash
 
 ```bash
 # Submit
 curl -X POST http://localhost:8000/tasks \
   -H "Content-Type: application/json" \
   -d '{"request": "Research trade-offs between microservices and monoliths"}'
-# → {"task_id": "a3f91c4b..."}
 
 # Watch live
-curl -N http://localhost:8000/tasks/a3f91c4b.../stream
+curl -N http://localhost:8000/tasks/<task_id>/stream
+```
+
+### Windows PowerShell
+
+```powershell
+# Submit
+Invoke-RestMethod -Method POST `
+  -Uri "http://localhost:8000/tasks" `
+  -ContentType "application/json" `
+  -Body '{"request":"Research trade-offs between microservices and monoliths"}'
+
+# Watch live
+curl.exe -N http://localhost:8000/tasks/<task_id>/stream
 ```
 
 ### Status lifecycle
